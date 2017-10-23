@@ -9,4 +9,6 @@ firstword = word[0]
 aytail = 'ay.'
 translatedword = word.replace(word[0],"")
 translatedword = translatedword + firstword + aytail
+#A simpler way
+#translatedword = word[1:len(word)] + firstword + aytail
 print (translatedword)
