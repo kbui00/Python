@@ -5,18 +5,18 @@ board = []
 axis = []
 
 #Human typing simulation
-typing_speed = 70 #wpm
+typing_speed = 140 #wpm
 def slow_type(t):
     for l in t:
-        sys.stdout.write(l)
-        sys.stdout.flush()
-        time.sleep(random.random()*10.0/typing_speed)
+      sys.stdout.write(l)
+      sys.stdout.flush()
+      time.sleep(random.random()*10.0/typing_speed)
     print ('')
+slow_type("Welcome Commander, I am happy to have you with us today. Getting right to the point, we are facing a hidden enemy battleship within our territory. The enemy's presence has severely undermined our effort to supply the front line. It is up to you to lead us one step closer to victory by destroying the enemy's battleship.")
 
-#slow_type("Welcome Commander, I am happy to have you with us today. Getting right to the point, we are facing a hidden enemy battleship within our territory. The enemy's presence has severely undermined our effort to supply the front line. It is up to you to lead us one step closer to victory by destroying the enemy's battleship.")
 print ("")
-#size = int(raw_input('Enter board size: ')
 
+#Check valid board size
 valid = 11
 while valid > 10:
   size = eval(input('Please enter your desired board size (smaller than 11): '))
@@ -25,14 +25,7 @@ print ("")
 
 for x in range(0,size):
   board.append([str(x)] + ["O"] * size)
-
-#def print_board(board):
-#  z = 0
-#  for row in board:
-#    while z < size:
-#      print (z,  " ".join(row))
-#      z = z + 1
-      
+  
 def print_board(board):
   for row in board:
     print (" ".join(row))
@@ -53,10 +46,6 @@ def random_col(board):
 
 ship_row = random_row(board)
 ship_col = random_col(board)
-
-#Debugging
-#print (ship_row)
-#print (ship_col)
 
 for turn in range(size-1):
   print ("")
